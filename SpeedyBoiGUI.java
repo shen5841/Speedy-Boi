@@ -81,7 +81,7 @@ public class SpeedyBoiGUI extends JFrame implements ActionListener {
     
     
     /** The timer display */
-    private JLabel timerMsg;
+    public static JLabel timerMsg;
     private JLabel bestTimeMsg;
     private int bestTime;
     private int winTime;
@@ -168,10 +168,10 @@ public class SpeedyBoiGUI extends JFrame implements ActionListener {
        
        
        
-       
+       /*
             timerMsg.setText("Time: " + Helper.timeRemain);
             timerMsg.setVisible(true);
-            
+            */
             bestTimeMsg.setText("Best Time: " + bestTime);
             bestTimeMsg.setVisible(true);
             
@@ -385,8 +385,8 @@ public class SpeedyBoiGUI extends JFrame implements ActionListener {
             
             
             Helper.timeRemain = 0;
-            
-            
+
+            Helper.booleeen = false;
             
             if (!board.anotherPlayIsPossible()) {
                 signalLoss();
@@ -436,10 +436,18 @@ public class SpeedyBoiGUI extends JFrame implements ActionListener {
         totalWins++;
         totalGames++;
         */
-        if (winTime < bestTime || (bestTime == 0)) {
+       int cinter = 0;
+        if (cinter == 0 && bestTime == 0) {
+            bestTime = winTime;
+            cinter++;
+        } else if (winTime > 0 && winTime < bestTime) {
             bestTime = winTime;
         }
+
+        Helper.booleeen = true;
+        
         Helper.timeRemain = 0;
+        winMsg.setText("Your time was: " + winTime + " seconds");
     }
 
     /**

@@ -2,5 +2,4 @@
 comment0.target=SpeedyBoiGUIRunner
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\r\n\ Plays\ the\ GUI\ version\ of\ Thirteens.\r\n\ @param\ args\ is\ not\ used.\r\n
 numComments=2

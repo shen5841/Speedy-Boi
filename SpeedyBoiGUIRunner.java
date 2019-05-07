@@ -13,12 +13,16 @@ public class SpeedyBoiGUIRunner
      * Plays the GUI version of Thirteens.
      * @param args is not used.
      */
+    
+    static Timer timer = new Timer(); 
+    static TimerTask task = new Helper(); 
+    
     public static void main(String[] args) {
         
-        Timer timer = new Timer(); 
-        TimerTask task = new Helper(); 
-        timer.schedule(task, 1000, 1000); 
         
+        
+        timer.schedule(task, 1000, 1000); 
+             
         SpeedyBoiBoard board = new SpeedyBoiBoard();
         SpeedyBoiGUI gui = new SpeedyBoiGUI(board);
         gui.displayGame();
